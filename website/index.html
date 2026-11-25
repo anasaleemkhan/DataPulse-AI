@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataPulse-AI | Academic Exploratory Data Science & AI Copilot</title>
+  <meta name="description" content="Autonomous Exploratory Data Science & Multimodal Research Copilot powered by Google Gemini 2.5 and modern statistical profiling.">
+  
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Ambient Background Grids -->
+  <div class="bg-mesh"></div>
+  <div class="bg-grid"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span>🔬 DataPulse-AI</span>
+      <span class="brand-badge">Academic v2.5</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#telemetry">Live Telemetry</a></li>
+      <li><a href="#math-engine">Math & IQR</a></li>
+      <li><a href="#gemini-copilot">Gemini Copilot</a></li>
+      <li><a href="#academic-impact">Admissions & SOP</a></li>
+      <li><a href="#cli-terminal">CLI & Arch</a></li>
+      <li><a href="#quickstart">Quickstart</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="lang-toggle-btn" onclick="switchReportLang(currentLang === 'en' ? 'it' : 'en')">
+        <span>🌐</span>
+        <span id="lang-indicator">EN / IT</span>
+      </button>
+      <a href="#quickstart" class="btn btn-primary btn-sm">
+        <span>Get Started</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="overview">
+    <div class="container">
+      <div class="hero-pill">
+        <span class="pulse-dot"></span>
+        <span>Bilingual Academic Research Engine • Google Gemini 2.5 Flash</span>
+      </div>
+
+      <h1>
+        Autonomous Exploratory Data Science & <span class="text-gradient">Multimodal AI Copilot</span>
+      </h1>
+
+      <p class="hero-desc">
+        A research-grade statistical profiling engine tailored for European graduate applications. 
+        Automates rigorous distribution metrics, mathematical IQR anomaly auditing, Pearson matrix vectorization, 
+        and Google Gemini synthesis in <strong>English</strong> and <strong>Italiano</strong>.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#telemetry" class="btn btn-primary">
+          <span>📊 Explore Live Telemetry</span>
+        </a>
+        <a href="#gemini-copilot" class="btn btn-secondary">
+          <span>🧠 View Gemini Synthesis</span>
+        </a>
+        <a href="#cli-terminal" class="btn btn-secondary">
+          <span>💻 Run CLI Simulator</span>
+        </a>
+      </div>
+
+      <!-- Quick KPI Counters -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" data-target="24" data-decimals="0">0</div>
+          <div class="stat-label">Multimodal Telemetry Intervals</div>
+          <div class="stat-sub">Po Valley & Central Italy Basins</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" data-target="7" data-decimals="0">0</div>
+          <div class="stat-label">Vectorized Feature Dimensions</div>
+          <div class="stat-sub">Physical & Aerosol Metrics</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" data-target="0.0" data-decimals="1" data-suffix="%">0%</div>
+          <div class="stat-label">Data Missingness Ratio</div>
+          <div class="stat-sub">Zero Incomplete Sensor Intervals</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" data-target="0.994" data-decimals="3">0.000</div>
+          <div class="stat-label">Max Pearson Correlation (r)</div>
+          <div class="stat-sub">PM2.5 ↔ PM10 Physical Coupling</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- University Strip -->
+  <div class="uni-strip">
+    <div class="container">
+      <div class="uni-strip-title">Engineered to Meet Admissions Standards at Top European Research Institutions</div>
+      <div class="uni-list">
+        <div class="uni-item">🏛️ <span>Politecnico di Milano</span> (PoliMi)</div>
+        <div class="uni-item">🏛️ <span>Università di Bologna</span> (UniBo)</div>
+        <div class="uni-item">🏛️ <span>Sapienza Università di Roma</span></div>
+        <div class="uni-item">🏛️ <span>Politecnico di Torino</span> (PoliTo)</div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- SECTION 1: Interactive Urban Telemetry Explorer -->
+    <section id="telemetry" style="padding-top: 2rem;">
+      <div class="section-header">
+        <div class="section-tag">Empirical Data Grounding</div>
+        <h2 class="section-title">Italian Urban Climate & Air Quality Telemetry</h2>
+        <p class="section-desc">
+          Live inspection of real environmental telemetry recorded across Northern and Central Italian metropolises. 
+          Filter by municipality to inspect local particulate matter and meteorological trends.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <!-- City Filter Tabs -->
+        <div class="city-filters">
+          <button class="city-btn active" data-city="All">🇮🇹 All Metropolises</button>
+          <button class="city-btn" data-city="Milano">Milano (Lombardia)</button>
+          <button class="city-btn" data-city="Bologna">Bologna (Emilia-Romagna)</button>
+          <button class="city-btn" data-city="Torino">Torino (Piemonte)</button>
+          <button class="city-btn" data-city="Roma">Roma (Lazio)</button>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="metrics-row">
+          <div class="metric-box">
+            <div class="metric-title">Mean PM2.5 Density</div>
+            <div class="metric-number"><span id="val-pm25">43.2</span><span class="metric-unit">µg/m³</span></div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-title">Mean NO₂ Concentration</div>
+            <div class="metric-number"><span id="val-no2">39.3</span><span class="metric-unit">ppb</span></div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-title">Mean PM10 Density</div>
+            <div class="metric-number"><span id="val-pm10">59.9</span><span class="metric-unit">µg/m³</span></div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-title">Congestion Index</div>
+            <div class="metric-number"><span id="val-traffic">79.9</span><span class="metric-unit">/100</span></div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-title">Ambient Temperature</div>
+            <div class="metric-number"><span id="val-temp">7.7</span><span class="metric-unit">°C</span></div>
+          </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="charts-grid">
+          <div class="chart-wrapper">
+            <div class="chart-header">
+              <span class="chart-title">Temporal Particulate Excursion vs. Vehicular Congestion</span>
+              <span class="badge" style="font-size:0.75rem; color:#93C5FD; background:rgba(59,130,246,0.15); padding:2px 8px; border-radius:4px;">Dual Axis Time Series</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-telemetry"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-wrapper">
+            <div class="chart-header">
+              <span class="chart-title">City-Level Particulate Distribution</span>
+              <span class="badge" style="font-size:0.75rem; color:#34D399; background:rgba(16,185,129,0.15); padding:2px 8px; border-radius:4px;">Comparative</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-distribution"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Raw Telemetry Table -->
+        <div style="margin-top: 1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+            <h4 style="font-size:0.95rem; font-weight:700;">Sensor Telemetry Stream (<span id="table-count">sample_urban_data.csv</span>)</h4>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Showing synchronized recordings</span>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>City</th>
+                  <th>Temp (°C)</th>
+                  <th>Humidity (%)</th>
+                  <th>PM2.5 (µg/m³)</th>
+                  <th>PM10 (µg/m³)</th>
+                  <th>NO₂ (ppb)</th>
+                  <th>CO₂ (ppm)</th>
+                  <th>Traffic Index</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Mathematical Engine & IQR Anomaly Auditing -->
+    <section id="math-engine" class="math-section">
+      <div class="section-header">
+        <div class="section-tag">Rigorous Foundations</div>
+        <h2 class="section-title">Mathematical Profiling & IQR Anomaly Auditing</h2>
+        <p class="section-desc">
+          Moving beyond subjective heuristics: calculating statistical moments, quantiles, 
+          and Tukey's Interquartile Range (IQR) bounds to establish scientific rigor.
+        </p>
+      </div>
+
+      <div class="math-grid">
+        <!-- Left: Correlation Heatmap -->
+        <div class="card-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h3>🔥 Pearson Correlation Matrix (7 × 7)</h3>
+            <span class="badge" style="font-size:0.75rem; color:#A78BFA; background:rgba(139,92,246,0.15); padding:2px 8px; border-radius:4px;">Vectorized NumPy / Pandas</span>
+          </div>
+          <p style="font-size:0.88rem; margin-bottom:1rem;">
+            Quantifying linear dependencies across atmospheric parameters. Hover over cells to inspect exact coefficients ($r \in [-1, 1]$).
+          </p>
+          <div class="heatmap-container" id="corr-heatmap">
+            <!-- Populated via main.js -->
+          </div>
+          <div style="margin-top:1.2rem; display:flex; gap:1rem; font-size:0.78rem; color:var(--text-muted);">
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <span style="display:inline-block; width:12px; height:12px; background:rgba(16,185,129,0.5); border-radius:2px;"></span>
+              <span>Positive Correlation ($r > 0.5$)</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.4rem;">
+              <span style="display:inline-block; width:12px; height:12px; background:rgba(239,68,68,0.5); border-radius:2px;"></span>
+              <span>Inverse Correlation ($r < -0.5$)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: IQR Outlier Auditing -->
+        <div class="card-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h3>🚨 IQR Outlier Audit (Tukey 1.5×IQR)</h3>
+            <span class="badge" style="font-size:0.75rem; color:#F59E0B; background:rgba(245,158,11,0.15); padding:2px 8px; border-radius:4px;">Statistical Boundary</span>
+          </div>
+
+          <div class="formula-box">
+            Lower Bound = Q₁ - (1.5 × IQR)<br>
+            Upper Bound = Q₃ + (1.5 × IQR)
+          </div>
+
+          <p style="font-size:0.88rem; margin-bottom:1rem;">
+            Outlier verification confirms that rush-hour telemetry spikes (e.g., Turin at 18:00 with PM2.5 = 66.5 µg/m³) reside safely within mathematical thresholds, proving they reflect real environmental events rather than sensor failure.
+          </p>
+
+          <div id="outlier-list">
+            <!-- Populated via main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Google Gemini AI Research Copilot -->
+    <section id="gemini-copilot" class="gemini-section">
+      <div class="section-header">
+        <div class="section-tag">Autonomous Research Synthesis</div>
+        <h2 class="section-title">Google Gemini 2.5 Flash Academic Copilot</h2>
+        <p class="section-desc">
+          Feeding computed statistical fingerprints into Google's latest multimodal Gemini architecture 
+          to generate peer-review-grade research briefs, ML model recommendations, and policy takeaways.
+        </p>
+      </div>
+
+      <div class="report-viewer">
+        <div class="report-header">
+          <div class="report-title-group">
+            <span class="gemini-pill">✨ Gemini 2.5 Flash</span>
+            <div>
+              <h3 id="report-title" style="font-size:1.1rem; color:#F8FAFC;">Academic Exploratory Data Analysis & AI Research Report</h3>
+              <div id="report-subtitle" style="font-size:0.8rem; color:#94A3B8;">Synthesized from Rigorous Statistical Payload</div>
+            </div>
+          </div>
+
+          <!-- Bilingual Toggle -->
+          <div class="report-tabs">
+            <button class="report-tab-btn active" data-lang="en" onclick="switchReportLang('en')">🇬🇧 English</button>
+            <button class="report-tab-btn" data-lang="it" onclick="switchReportLang('it')">🇮🇹 Italiano</button>
+          </div>
+        </div>
+
+        <div class="report-body" id="report-content">
+          <!-- Populated dynamically via main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Academic Relevance & University Admissions Showcase -->
+    <section id="academic-impact" style="padding: 4rem 0;">
+      <div class="section-header">
+        <div class="section-tag">University Admissions Alignment</div>
+        <h2 class="section-title">Academic Merit & European Graduate Readiness</h2>
+        <p class="section-desc">
+          Designed specifically to satisfy the stringent prerequisites of top European Computer Science & AI master's programs.
+        </p>
+      </div>
+
+      <div class="admissions-grid">
+        <div class="admissions-card">
+          <div class="icon-pill icon-blue">📐</div>
+          <h3 style="font-size:1.2rem; margin-bottom:0.5rem;">Mathematical Foundations</h3>
+          <p style="font-size:0.9rem;">
+            Replaces black-box LLM chatting with explicit computation of sample moments, skewness, quantile boundaries, and Pearson linear algebra before triggering generative synthesis.
+          </p>
+        </div>
+
+        <div class="admissions-card">
+          <div class="icon-pill icon-cyan">🌿</div>
+          <h3 style="font-size:1.2rem; margin-bottom:0.5rem;">Explainable AI & Ethics</h3>
+          <p style="font-size:0.9rem;">
+            Anchored in real Italian urban telemetry (Milano, Bologna, Torino, Roma). Demonstrates deep awareness of environmental sensing, public health policy, and European data ethics.
+          </p>
+        </div>
+
+        <div class="admissions-card">
+          <div class="icon-pill icon-purple">🌐</div>
+          <h3 style="font-size:1.2rem; margin-bottom:0.5rem;">Bilingual Academic Readiness</h3>
+          <p style="font-size:0.9rem;">
+            Full dual-language scientific reporting in English and Italian (*Rapporto di Analisi Dati e Ricerca*), verifying proficiency for international universities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Statement of Purpose (SOP) Snippet -->
+      <div class="sop-box">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+          <h4 style="font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--accent-cyan);">
+            📄 Statement of Purpose (SOP) / Resume Ready Snippet
+          </h4>
+          <button class="btn btn-secondary btn-sm btn-copy" data-copy-target="sop-text">
+            <span>📋 Copy Snippet</span>
+          </button>
+        </div>
+        <div class="sop-content" id="sop-text">
+          "Architected DataPulse-AI, an academic-grade exploratory data science engine and bilingual AI research copilot powered by Google Gemini 2.5 and google-genai SDK. Vectorized Pearson correlation matrices (7x7) and implemented Tukey's IQR mathematical outlier auditing to profile multi-sensor urban telemetry across Italian metropolises (Milano, Bologna, Torino, Roma). Automated the translation of statistical distribution moments into peer-review-grade predictive modeling hypotheses and municipal public health policies."
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Architecture & Interactive CLI Terminal Simulator -->
+    <section id="cli-terminal" style="padding: 3rem 0;">
+      <div class="section-header">
+        <div class="section-tag">Dual Execution Pipeline</div>
+        <h2 class="section-title">Headless Terminal CLI & Modular Architecture</h2>
+        <p class="section-desc">
+          DataPulse-AI operates seamlessly across two paradigms: an interactive Streamlit web dashboard and an automated headless CLI for CI/CD research pipelines.
+        </p>
+      </div>
+
+      <!-- Terminal Window -->
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <div class="terminal-title">bash - datapulse-ai environment</div>
+          <div class="terminal-actions">
+            <button class="cli-btn-preset active" data-preset="en" onclick="runCliPreset('en')">python cli.py (EN)</button>
+            <button class="cli-btn-preset" data-preset="it" onclick="runCliPreset('it')">python cli.py (IT)</button>
+            <button class="cli-btn-preset" data-preset="streamlit" onclick="runCliPreset('streamlit')">streamlit run app.py</button>
+          </div>
+        </div>
+        <div class="terminal-screen" id="terminal-screen">
+          <!-- Animated terminal output streaming -->
+        </div>
+      </div>
+
+      <!-- Repository Tree Structure -->
+      <div style="margin-top: 2.5rem;">
+        <h4 style="margin-bottom:0.75rem; font-size:1.05rem;">📁 Clean Architectural Hierarchy</h4>
+        <div class="tree-box">
+DataPulse-AI/
+├── app.py                   <span class="tree-comment"># Interactive Streamlit Web Dashboard</span>
+├── cli.py                   <span class="tree-comment"># Terminal CLI for automated headless runs</span>
+├── eda_engine.py            <span class="tree-comment"># Mathematical & Statistical Profiling Engine</span>
+├── gemini_copilot.py        <span class="tree-comment"># Google Gemini Integration (google-genai SDK v3)</span>
+├── sample_urban_data.csv    <span class="tree-comment"># Real-world Italian Urban Air Quality Dataset</span>
+├── website/                 <span class="tree-comment"># Showcase & Portfolio Landing Website</span>
+│   ├── index.html           <span class="tree-comment"># Responsive Interactive Showcase Web Page</span>
+│   ├── css/style.css        <span class="tree-comment"># Academic Glassmorphism Stylesheet</span>
+│   └── js/                  <span class="tree-comment"># Telemetry Charts, Terminal Simulation, Data</span>
+├── requirements.txt         <span class="tree-comment"># Production dependencies</span>
+└── README.md                <span class="tree-comment"># Research & Project Documentation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Quickstart Guide -->
+    <section id="quickstart" style="padding: 4rem 0;">
+      <div class="section-header">
+        <div class="section-tag">Quickstart & Reproduction</div>
+        <h2 class="section-title">Deployment & Execution in 3 Steps</h2>
+        <p class="section-desc">
+          Reproduce the exact experimental telemetry pipeline locally on your workstation.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:1.5rem;">
+        <div class="card-panel">
+          <div style="font-size:0.8rem; font-weight:700; color:var(--accent-blue); margin-bottom:0.4rem;">STEP 1</div>
+          <h4 style="margin-bottom:0.6rem;">Clone & Install Dependencies</h4>
+          <p style="font-size:0.88rem; margin-bottom:1rem;">Clone repository and install requirements via pip:</p>
+          <div style="background:#080D1A; padding:0.8rem; border-radius:6px; font-family:var(--font-mono); font-size:0.82rem; color:#38BDF8;">
+            git clone https://github.com/anasaleemkhan/DataPulse-AI.git<br>
+            cd DataPulse-AI<br>
+            pip install -r requirements.txt
+          </div>
+        </div>
+
+        <div class="card-panel">
+          <div style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); margin-bottom:0.4rem;">STEP 2</div>
+          <h4 style="margin-bottom:0.6rem;">Configure Gemini API Key</h4>
+          <p style="font-size:0.88rem; margin-bottom:1rem;">Obtain a free key from Google AI Studio:</p>
+          <div style="background:#080D1A; padding:0.8rem; border-radius:6px; font-family:var(--font-mono); font-size:0.82rem; color:#38BDF8;">
+            # PowerShell<br>
+            $env:GEMINI_API_KEY="your-api-key"<br><br>
+            # Linux / macOS<br>
+            export GEMINI_API_KEY="your-api-key"
+          </div>
+        </div>
+
+        <div class="card-panel">
+          <div style="font-size:0.8rem; font-weight:700; color:var(--accent-emerald); margin-bottom:0.4rem;">STEP 3</div>
+          <h4 style="margin-bottom:0.6rem;">Execute Dual Interfaces</h4>
+          <p style="font-size:0.88rem; margin-bottom:1rem;">Launch Streamlit UI or headless CLI:</p>
+          <div style="background:#080D1A; padding:0.8rem; border-radius:6px; font-family:var(--font-mono); font-size:0.82rem; color:#38BDF8;">
+            # Interactive Web Dashboard<br>
+            streamlit run app.py<br><br>
+            # Headless CLI Engine<br>
+            python cli.py --data sample_urban_data.csv --lang en
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">🔬 DataPulse-AI</div>
+          <p style="font-size:0.9rem; max-width:440px; margin-bottom:1rem;">
+            Academic Exploratory Data Science & AI Copilot. Developed to advance mathematical rigor, 
+            explainable AI, and environmental telemetry synthesis for European graduate research.
+          </p>
+          <div style="display:flex; gap:0.6rem;">
+            <a href="https://github.com/anasaleemkhan/DataPulse-AI" target="_blank" class="btn btn-secondary btn-sm">GitHub Repository</a>
+            <a href="#telemetry" class="btn btn-secondary btn-sm">Telemetry Explorer</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.8rem; color:#CBD5E1;">Core Technologies</h4>
+          <ul style="list-style:none; font-size:0.88rem; line-height:2; color:var(--text-secondary);">
+            <li>Python 3.9+</li>
+            <li>Google Gemini 2.5 Flash</li>
+            <li>google-genai SDK v3</li>
+            <li>NumPy & Pandas</li>
+            <li>SciPy & Statsmodels</li>
+            <li>Streamlit & Plotly</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size:0.9rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.8rem; color:#CBD5E1;">Academic Target</h4>
+          <ul style="list-style:none; font-size:0.88rem; line-height:2; color:var(--text-secondary);">
+            <li>Politecnico di Milano</li>
+            <li>Università di Bologna</li>
+            <li>Sapienza Università di Roma</li>
+            <li>Politecnico di Torino</li>
+            <li>EU AI & Data Science M.Sc.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Released under the MIT License • Built for Academic & Scientific Research</div>
+        <div>DataPulse-AI Research Team © 2026</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

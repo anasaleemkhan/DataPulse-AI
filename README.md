@@ -45,6 +45,12 @@ DataPulse-AI/
 ├── eda_engine.py            # Mathematical & Statistical Profiling Engine
 ├── gemini_copilot.py        # Google Gemini Integration (google-genai SDK)
 ├── sample_urban_data.csv    # Real-world Italian Urban Air Quality & Climate Dataset
+├── serve_website.py         # Zero-dependency local server for the showcase website
+├── website/                 # Interactive Portfolio & Academic Showcase Website
+│   ├── index.html           # Modern glassmorphism showcase UI with Chart.js
+│   ├── css/style.css        # Academic dark research theme styling
+│   └── js/                  # Interactive telemetry, terminal sim & bilingual reports
+├── index.html               # Root redirect for GitHub Pages / static hosting
 ├── requirements.txt         # Production dependencies
 ├── .gitignore               # Clean repository tracking rules
 └── README.md                # Research & project documentation
@@ -94,6 +100,13 @@ python cli.py --data sample_urban_data.csv --lang en
 # Italian analysis on sample data
 python cli.py --data sample_urban_data.csv --lang it
 ```
+
+### C. Run Portfolio & Showcase Website (For University / Job Applications)
+```bash
+# Launch the local web server with automatic browser launch
+python serve_website.py
+```
+*Access in browser at `http://localhost:8000` (or double-click `website/index.html` directly in your file browser without needing any server).*
 
 ---
 
