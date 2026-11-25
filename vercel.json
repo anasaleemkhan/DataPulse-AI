@@ -1,6 +1,3 @@
 {
-  "version": 2,
-  "outputDirectory": "website",
-  "framework": null,
   "cleanUrls": true
 }
